@@ -1,2 +1,2 @@
 #!/bin/sh
-cmake-build.sh && make && ./Countdown
+./scripts/cmake-build.sh && make && ./Countdown
