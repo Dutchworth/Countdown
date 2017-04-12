@@ -8,3 +8,5 @@
 *.cmake
 CMakeFiles
 CMakeCache.txt
+Countdown
+Makefile
