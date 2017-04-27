@@ -1,13 +1,1 @@
-*.exe
-*.d
-*.a
-*.o
-.project
-.cproject
-.settings
-*.cmake
-CMakeFiles
-CMakeCache.txt
-Countdown
-Makefile
-googletest-*
+build

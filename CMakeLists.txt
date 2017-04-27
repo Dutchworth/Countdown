@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 project(Countdown)
 
 # Download and unpack googletest at configure time
@@ -32,8 +32,9 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+add_definitions(-std=c++11)
+
 add_executable(Countdown src/main.cpp)
-add_definitions(-std=c++14)
 
 target_link_libraries(Countdown gtest gtest_main)
 # add_test(NAME example_test COMMAND example)
