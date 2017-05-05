@@ -32,9 +32,27 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
+# copying word list to build dir
+if (NOT CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
+
+  # list of files for which we add a copy rule
+  set (data_SHADOW english-words/words.txt)
+
+  foreach(item IN LISTS data_SHADOW)
+    message(STATUS ${item})
+    add_custom_command(
+      OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${item}"
+      COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/${item}" "${CMAKE_CURRENT_BINARY_DIR}/${item}"
+      DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${item}"
+    )
+  endforeach()
+endif()
+
 add_definitions(-std=c++11)
 
 add_executable(Countdown src/main.cpp)
 
-target_link_libraries(Countdown gtest gtest_main)
+# target_link_libraries(Countdown gtest gtest_main)
 # add_test(NAME example_test COMMAND example)
+
+add_custom_target(data-target ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/english-words/words.txt")
