@@ -14,8 +14,8 @@ std::vector<std::string>StatsUtils::getCombinations(std::string set,
   std::vector<std::string> returnVect;
 
   if (subSetSize <= 1) {
-    for (int i = 0; i < set.size(); ++i) {
-      returnVect.push_back(charToString(set.at(i)));
+    for (char each : set) {
+      returnVect.push_back(charToString(each));
     }
   } else {
     std::string setCopy = set;
@@ -27,8 +27,8 @@ std::vector<std::string>StatsUtils::getCombinations(std::string set,
 
       std::vector<std::string> combs = getCombinations(setCopy, subSetSize - 1);
 
-      for (int j = 0; j < combs.size(); ++j) {
-        std::string subCombo = charToString(item) + combs[i];
+      for (std::string each : combs) {
+        std::string subCombo = charToString(item) + each;
         returnVect.push_back(subCombo);
       }
     }
