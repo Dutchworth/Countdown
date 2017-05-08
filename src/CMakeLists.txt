@@ -5,6 +5,7 @@ set(SRC_FILES
   WordUtils.cpp
   Dictionary.cpp
   StatsUtils.cpp
+  FileReading.cpp
 )
 
 add_library(srcLib ${SRC_FILES})
