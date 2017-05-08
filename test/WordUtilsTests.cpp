@@ -2,18 +2,29 @@
 #include "WordUtils.h"
 #include <string>
 
-class WordUtilsTests : public ::testing::Test {
-protected:
+TEST(WordUtilsTests, testAlphabetise) {
+  std::string input    = "fedcbaaa";
+  std::string expected = "aaabcdef";
 
-  std::string orig1   = "fedcba";
-  std::string sorted1 = "abcdef";
+  std::string actual = WordUtils::alphabetise(input);
+  EXPECT_EQ(expected, actual);
+}
 
-  virtual void SetUp()    {}
+TEST(WordUtilsTests, testLowercase) {
+  std::string input    = "AbCdEf";
+  std::string expected = "abcdef";
 
-  virtual void TearDown() {}
-};
+  std::string actual = WordUtils::lowercase(input);
+  EXPECT_EQ(expected, actual);
+}
 
-TEST_F(WordUtilsTests, testAlphabetise) {
-  std::string actual1 = WordUtils::alphabetise(orig1);
-  EXPECT_EQ(sorted1, actual1);
+TEST(WordUtilsTests, testIsUsable) {
+  std::string input1 = "abcdef";
+  EXPECT_TRUE(WordUtils::isUsable(input1));
+
+  std::string input2 = "abcd^ef";
+  EXPECT_FALSE(WordUtils::isUsable(input2));
+
+  std::string input3 = "AbCdEf";
+  EXPECT_FALSE(WordUtils::isUsable(input3));
 }
