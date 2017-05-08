@@ -11,6 +11,9 @@ env:
   global:
     - MAKEFLAGS=" -j 2"
 
+before_install:
+  - git submodule update --init --recursive
+
 script:
   - ./configure
   - cd build
