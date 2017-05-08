@@ -28,6 +28,7 @@ bool WordUtils::isUsable(const std::string word) {
          && (std::find_if(toReturn.begin(),
                           toReturn.end(),
                           non_alpha()) == toReturn.end())
-         && (std::find_if(toReturn.begin(), toReturn.end(),
+         && (std::find_if(toReturn.begin(),
+                          toReturn.end(),
                           ::isupper) == toReturn.end());
 }

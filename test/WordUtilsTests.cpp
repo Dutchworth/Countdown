@@ -8,6 +8,9 @@ TEST(WordUtilsTests, testAlphabetise) {
 
   std::string actual = WordUtils::alphabetise(input);
   EXPECT_EQ(expected, actual);
+
+  std::string actual2 = WordUtils::alphabetise(expected);
+  EXPECT_EQ(expected, actual2);
 }
 
 TEST(WordUtilsTests, testLowercase) {
@@ -16,6 +19,9 @@ TEST(WordUtilsTests, testLowercase) {
 
   std::string actual = WordUtils::lowercase(input);
   EXPECT_EQ(expected, actual);
+
+  std::string actual2 = WordUtils::lowercase(expected);
+  EXPECT_EQ(expected, actual2);
 }
 
 TEST(WordUtilsTests, testIsUsable) {
@@ -27,4 +33,7 @@ TEST(WordUtilsTests, testIsUsable) {
 
   std::string input3 = "AbCdEf";
   EXPECT_FALSE(WordUtils::isUsable(input3));
+
+  std::string input4 = "abcdefghijk";
+  EXPECT_FALSE(WordUtils::isUsable(input4));
 }
