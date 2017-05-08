@@ -4,6 +4,7 @@ project(test)
 set(TEST_SOURCES
   RunAllTests.cpp
   WordUtilsTests.cpp
+  DictionaryTests.cpp
 )
 
 include_directories(${src_SOURCE_DIR})

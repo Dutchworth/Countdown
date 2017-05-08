@@ -3,6 +3,7 @@ project(src)
 
 set(SRC_FILES
   WordUtils.cpp
+  Dictionary.cpp
 )
 
 add_library(srcLib ${SRC_FILES})
