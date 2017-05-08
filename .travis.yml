@@ -1,0 +1,18 @@
+language: cpp
+sudo: false
+dist: trusty
+
+addons:
+  apt:
+    packages:
+      - cmake
+
+env:
+  global:
+    - MAKEFLAGS=" -j 2"
+
+script:
+  - ./configure
+  - cd build
+  - make
+  - make test
