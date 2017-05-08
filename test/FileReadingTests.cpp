@@ -34,3 +34,12 @@ TEST_F(FileReadingTests, testRead) {
   EXPECT_EQ("dog",     dict.findWord("odg"));
   EXPECT_EQ("goodbye", dict.findWord("byegood"));
 }
+
+TEST_F(FileReadingTests, testReadWithWordsTxt) {
+  Dictionary dict = FileReading::read("english-words/words.txt");
+
+  EXPECT_EQ("aardvark", dict.findWord("varkaard"));
+  EXPECT_EQ("queen",    dict.findWord("ueeqn"));
+  EXPECT_EQ("knave",    dict.findWord("avnke"));
+  EXPECT_EQ("ace",      dict.findWord("cea"));
+}
