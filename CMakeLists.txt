@@ -48,11 +48,15 @@ if (NOT CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
   endforeach()
 endif()
 
+add_custom_target(data-target ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/english-words/words.txt")
+
 add_definitions(-std=c++11)
 
-add_executable(Countdown src/main.cpp)
+add_subdirectory(src)
+add_subdirectory(test)
 
-# target_link_libraries(Countdown gtest gtest_main)
-# add_test(NAME example_test COMMAND example)
+add_executable(Countdown ${src_SOURCE_DIR}/main.cpp)
+target_link_libraries(Countdown srcLib)
 
-add_custom_target(data-target ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/english-words/words.txt")
+enable_testing()
+add_test(NAME unitTests COMMAND runUnitTests)
