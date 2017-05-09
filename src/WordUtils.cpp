@@ -25,6 +25,7 @@ bool WordUtils::isUsable(const std::string word) {
   };
 
   return (toReturn.size() <= 9)
+         && (toReturn.size() >= 2)
          && (std::find_if(toReturn.begin(),
                           toReturn.end(),
                           non_alpha()) == toReturn.end())
