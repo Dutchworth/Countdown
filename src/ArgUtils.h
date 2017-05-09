@@ -9,5 +9,17 @@ std::vector<std::string>getArgs(int    argc,
 
 bool                    helpRequested(int    argc,
                                       char **argv);
+
+bool                    newDictPathGiven(int    argc,
+                                         char **argv);
+
+std::string             newDictPath(int    argc,
+                                    char **argv);
+
+bool                    lettersGiven(int    argc,
+                                     char **argv);
+
+std::string             getLetters(int    argc,
+                                   char **argv);
 }
 #endif // ifndef ARGUTILS_H
