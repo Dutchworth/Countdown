@@ -8,6 +8,7 @@ set(TEST_SOURCES
   StatsUtilsTests.cpp
   FileReadingTests.cpp
   SolverTests.cpp
+  ArgUtilsTests.cpp
 )
 
 include_directories(${src_SOURCE_DIR})

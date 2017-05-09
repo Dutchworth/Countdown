@@ -7,6 +7,7 @@ set(SRC_FILES
   StatsUtils.cpp
   FileReading.cpp
   Solver.cpp
+  ArgUtils.cpp
 )
 
 add_library(srcLib ${SRC_FILES})
