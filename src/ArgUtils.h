@@ -6,5 +6,8 @@
 namespace ArgUtils {
 std::vector<std::string>getArgs(int    argc,
                                 char **argv);
+
+bool                    helpRequested(int    argc,
+                                      char **argv);
 }
 #endif // ifndef ARGUTILS_H

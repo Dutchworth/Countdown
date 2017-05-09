@@ -20,7 +20,7 @@ protected:
   std::vector<std::string>expected2 { "path/to/file",
                                       "abcdefghi"  };
 
-  char **argv3 = new char *[argc1];
+  char **argv3 = new char *[argc2];
 
   virtual void SetUp()    {
     argv1[0] = (char *)"path/to/file";
@@ -47,4 +47,8 @@ TEST_F(ArgUtilsTests, testGetArgs) {
 
   std::vector<std::string> actual2 = ArgUtils::getArgs(argc2, argv2);
   EXPECT_EQ(expected2, actual2);
+}
+
+TEST_F(ArgUtilsTests, testHelpRequested) {
+  EXPECT_TRUE(ArgUtils::helpRequested(argc2, argv3));
 }
