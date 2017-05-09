@@ -9,21 +9,9 @@ protected:
 
   std::string path = "test-words.txt";
 
-  virtual void SetUp() {
-    std::ofstream testFile;
-    testFile.open(path);
+  virtual void SetUp()    {}
 
-    testFile << "hello\n";
-    testFile << "cat\n";
-    testFile << "dog\n";
-    testFile << "goodbye\n";
-
-    testFile.close();
-  }
-
-  virtual void TearDown() {
-    std::remove(path.c_str());
-  }
+  virtual void TearDown() {}
 };
 
 TEST_F(FileReadingTests, testRead) {

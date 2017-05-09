@@ -7,6 +7,7 @@ set(TEST_SOURCES
   DictionaryTests.cpp
   StatsUtilsTests.cpp
   FileReadingTests.cpp
+  SolverTests.cpp
 )
 
 include_directories(${src_SOURCE_DIR})
