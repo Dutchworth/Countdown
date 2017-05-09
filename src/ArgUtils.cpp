@@ -1,6 +1,7 @@
 #include "ArgUtils.h"
 #include <vector>
 #include <string>
+#include <ostream>
 #include <algorithm>
 
 std::vector<std::string>ArgUtils::getArgs(int argc, char **argv) {
@@ -42,4 +43,13 @@ bool ArgUtils::lettersGiven(int argc, char **argv) {
 std::string ArgUtils::getLetters(int argc, char **argv) {
   std::vector<std::string> args = getArgs(argc, argv);
   return args.at(1);
+}
+
+void ArgUtils::printHelp(std::ostream& out) {
+  out << "Countdown Solver\n";
+  out << " ========== \n";
+  out << "This programs takes input of the 9 letters to be used to create the solution (as one block eg. abcdefghi).\n";
+  out << "If you want to use another dictionary file then follow these letters with the path to said dictionary.\n";
+  out << "Otherwise, a default dictionary of english words is used. Your own dictionary should consists of all the words you wich to be added, seperated by newlines\n";
+  out << " ========== \n";
 }

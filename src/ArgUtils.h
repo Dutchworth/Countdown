@@ -2,6 +2,7 @@
 #define ARGUTILS_H
 #include <vector>
 #include <string>
+#include <ostream>
 
 namespace ArgUtils {
 std::vector<std::string>getArgs(int    argc,
@@ -21,5 +22,7 @@ bool                    lettersGiven(int    argc,
 
 std::string             getLetters(int    argc,
                                    char **argv);
+
+void                    printHelp(std::ostream& out);
 }
 #endif // ifndef ARGUTILS_H
