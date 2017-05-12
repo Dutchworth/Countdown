@@ -13,5 +13,5 @@ set(TEST_SOURCES
 
 include_directories(${src_SOURCE_DIR})
 
-add_executable(runUnitTests ${TEST_SOURCES})
-target_link_libraries(runUnitTests srcLib gtest gtest_main)
+add_executable(countdown-runUnitTests ${TEST_SOURCES})
+target_link_libraries(countdown-runUnitTests srcLib gtest gtest_main)
