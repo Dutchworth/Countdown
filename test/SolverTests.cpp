@@ -1,25 +1,20 @@
-#include "gtest/gtest.h"
 #include "Solver.h"
 #include "Dictionary.h"
 #include "FileReading.h"
+#include "gtest/gtest.h"
 
 class SolverTests : public ::testing::Test {
-protected:
-
+ protected:
   std::string path = "test-words.txt";
   Dictionary dict;
 
-  virtual void SetUp() {
-    dict = FileReading::read(path);
-  }
+  virtual void SetUp() { dict = FileReading::read(path); }
 
-  virtual void TearDown() {
-    dict = Dictionary();
-  }
+  virtual void TearDown() { dict = Dictionary(); }
 };
 
 TEST_F(SolverTests, testLongWordHappy) {
-  std::string letters  = "aagoodbye";
+  std::string letters = "aagoodbye";
   std::string expected = "goodbye";
   std::string actual;
 
@@ -29,7 +24,7 @@ TEST_F(SolverTests, testLongWordHappy) {
 }
 
 TEST_F(SolverTests, testShortWordHappy) {
-  std::string letters  = "cataaaaaa";
+  std::string letters = "cataaaaaa";
   std::string expected = "cat";
   std::string actual;
 
@@ -39,7 +34,7 @@ TEST_F(SolverTests, testShortWordHappy) {
 }
 
 TEST_F(SolverTests, testNoWordExists) {
-  std::string letters  = "zzzzzzzzz";
+  std::string letters = "zzzzzzzzz";
   std::string expected = "";
   std::string actual;
 
@@ -50,7 +45,7 @@ TEST_F(SolverTests, testNoWordExists) {
 TEST_F(SolverTests, testWithEnglishWordsDictLongWord) {
   dict = FileReading::read("english-words/words.txt");
 
-  std::string letters  = "zymophyte";
+  std::string letters = "zymophyte";
   std::string expected = "zymophyte";
   std::string actual;
 
@@ -61,7 +56,7 @@ TEST_F(SolverTests, testWithEnglishWordsDictLongWord) {
 TEST_F(SolverTests, testWithEnglishWordsDictShortWord) {
   dict = FileReading::read("english-words/words.txt");
 
-  std::string letters  = "zymezzzzz";
+  std::string letters = "zymezzzzz";
   std::string expected = "zyme";
   std::string actual;
 

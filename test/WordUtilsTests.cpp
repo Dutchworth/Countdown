@@ -1,9 +1,9 @@
-#include "gtest/gtest.h"
 #include "WordUtils.h"
 #include <string>
+#include "gtest/gtest.h"
 
 TEST(WordUtilsTests, testAlphabetise) {
-  std::string input    = "fedcbaaa";
+  std::string input = "fedcbaaa";
   std::string expected = "aaabcdef";
 
   std::string actual = WordUtils::alphabetise(input);
@@ -14,7 +14,7 @@ TEST(WordUtilsTests, testAlphabetise) {
 }
 
 TEST(WordUtilsTests, testLowercase) {
-  std::string input    = "AbCdEf";
+  std::string input = "AbCdEf";
   std::string expected = "abcdef";
 
   std::string actual = WordUtils::lowercase(input);

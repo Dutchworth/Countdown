@@ -1,10 +1,9 @@
-#include "gtest/gtest.h"
-#include <string>
 #include <fstream>
+#include <string>
+#include "gtest/gtest.h"
 
 class TestEnv : public ::testing::Environment {
-public:
-
+ public:
   std::string path = "test-words.txt";
 
   virtual void SetUp() {
@@ -19,15 +18,13 @@ public:
     testFile.close();
   }
 
-  virtual void TearDown() {
-    std::remove(path.c_str());
-  }
+  virtual void TearDown() { std::remove(path.c_str()); }
 };
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
-  ::testing::Environment *const test_env = ::testing::AddGlobalTestEnvironment(
-    new TestEnv);
+  ::testing::Environment *const test_env =
+      ::testing::AddGlobalTestEnvironment(new TestEnv);
 
   return RUN_ALL_TESTS();
 }

@@ -1,11 +1,10 @@
 #include "Solver.h"
+#include <iostream>
+#include <string>
 #include "Dictionary.h"
 #include "StatsUtils.h"
-#include <string>
-#include <iostream>
 
-bool Solver::findWord(Dictionary & map,
-                      std::string  letters,
+bool Solver::findWord(Dictionary& map, std::string letters,
                       std::string& foundWord) {
   std::string word = map.findWord(letters);
 

@@ -1,29 +1,25 @@
-#include "gtest/gtest.h"
 #include "ArgUtils.h"
-#include <vector>
 #include <string>
-
+#include <vector>
+#include "gtest/gtest.h"
 
 class ArgUtilsTests : public ::testing::Test {
-protected:
-
-  int argc1    = 3;
+ protected:
+  int argc1 = 3;
   char **argv1 = new char *[argc1];
 
-  std::vector<std::string>expected1 { "path/to/file",
-                                      "abcdefghi",
-                                      "path/to/dict.txt" };
+  std::vector<std::string> expected1{"path/to/file", "abcdefghi",
+                                     "path/to/dict.txt"};
 
-  int argc2    = 2;
+  int argc2 = 2;
   char **argv2 = new char *[argc2];
 
-  std::vector<std::string>expected2 { "path/to/file",
-                                      "abcdefghi"  };
+  std::vector<std::string> expected2{"path/to/file", "abcdefghi"};
 
-  int argc3    = 2;
+  int argc3 = 2;
   char **argv3 = new char *[argc3];
 
-  virtual void SetUp()    {
+  virtual void SetUp() {
     argv1[0] = (char *)"path/to/file";
     argv1[1] = (char *)"abcdefghi";
     argv1[2] = (char *)"path/to/dict.txt";

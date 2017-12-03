@@ -14,4 +14,4 @@ std::string lowercase(const std::string word);
 // ie. lowercase, only alphbetic chars, <= 9 chars long
 bool isUsable(const std::string word);
 }
-#endif // ifndef WORDUTILS_H
+#endif  // ifndef WORDUTILS_H

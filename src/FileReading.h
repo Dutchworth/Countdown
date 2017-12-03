@@ -8,4 +8,4 @@ namespace FileReading {
 // (where path is the full path including filename of the file)
 Dictionary read(std::string path);
 }
-#endif // ifndef FILEREADING_H
+#endif  // ifndef FILEREADING_H

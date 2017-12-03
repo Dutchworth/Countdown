@@ -1,9 +1,9 @@
-#include "ArgUtils.h"
-#include "FileReading.h"
-#include "Dictionary.h"
-#include "Solver.h"
-#include <string>
 #include <iostream>
+#include <string>
+#include "ArgUtils.h"
+#include "Dictionary.h"
+#include "FileReading.h"
+#include "Solver.h"
 
 int main(int argc, char **argv) {
   if (ArgUtils::helpRequested(argc, argv)) {
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     std::string letters = ArgUtils::getLetters(argc, argv);
     std::cout << letters << '\n';
 
-    Dictionary  dict;
+    Dictionary dict;
     std::string path;
 
     if (ArgUtils::newDictPathGiven(argc, argv)) {
@@ -39,8 +39,9 @@ int main(int argc, char **argv) {
       std::cout << "No Solution found" << '\n';
     }
   } else {
-    std::cout <<
-      "Bad input. Please try again or use help command for more info." << '\n';
+    std::cout
+        << "Bad input. Please try again or use help command for more info."
+        << '\n';
     return 1;
   }
 

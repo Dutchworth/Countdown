@@ -1,7 +1,7 @@
 #include "StatsUtils.h"
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
 
 std::string charToString(char letter) {
   std::string toReturn = "";
@@ -9,8 +9,8 @@ std::string charToString(char letter) {
   return toReturn;
 }
 
-std::vector<std::string>StatsUtils::getCombinations(std::string set,
-                                                    int         subSetSize) {
+std::vector<std::string> StatsUtils::getCombinations(std::string set,
+                                                     int subSetSize) {
   std::vector<std::string> returnVect;
 
   if (subSetSize <= 1) {

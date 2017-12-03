@@ -1,18 +1,13 @@
-#include "gtest/gtest.h"
 #include "Dictionary.h"
+#include "gtest/gtest.h"
 
 class DictionaryTests : public ::testing::Test {
-protected:
-
+ protected:
   Dictionary dict1;
 
-  virtual void SetUp() {
-    dict1.addWord("hello");
-  }
+  virtual void SetUp() { dict1.addWord("hello"); }
 
-  virtual void TearDown() {
-    dict1 = Dictionary();
-  }
+  virtual void TearDown() { dict1 = Dictionary(); }
 };
 
 TEST_F(DictionaryTests, testCopyConstructor) {

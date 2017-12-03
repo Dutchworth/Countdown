@@ -1,7 +1,7 @@
 #include "WordUtils.h"
-#include <string>
 #include <algorithm>
 #include <cctype>
+#include <string>
 
 std::string WordUtils::alphabetise(const std::string word) {
   std::string toReturn = word;
@@ -19,17 +19,12 @@ bool WordUtils::isUsable(const std::string word) {
   std::string toReturn = word;
 
   struct non_alpha {
-    bool operator()(char c) {
-      return !std::isalpha(c);
-    }
+    bool operator()(char c) { return !std::isalpha(c); }
   };
 
-  return (toReturn.size() <= 9)
-         && (toReturn.size() >= 2)
-         && (std::find_if(toReturn.begin(),
-                          toReturn.end(),
-                          non_alpha()) == toReturn.end())
-         && (std::find_if(toReturn.begin(),
-                          toReturn.end(),
-                          ::isupper) == toReturn.end());
+  return (toReturn.size() <= 9) && (toReturn.size() >= 2) &&
+         (std::find_if(toReturn.begin(), toReturn.end(), non_alpha()) ==
+          toReturn.end()) &&
+         (std::find_if(toReturn.begin(), toReturn.end(), ::isupper) ==
+          toReturn.end());
 }

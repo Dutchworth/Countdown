@@ -1,18 +1,19 @@
 #include "Dictionary.h"
-#include "WordUtils.h"
-#include <string>
-#include <map>
 #include <exception>
+#include <map>
+#include <string>
+#include "WordUtils.h"
 
 Dictionary::Dictionary() {
   // do nothing, words will be added later
 }
 
-Dictionary::Dictionary(const Dictionary& other) : mappingDict(other.mappingDict) {
+Dictionary::Dictionary(const Dictionary &other)
+    : mappingDict(other.mappingDict) {
   // do nothing, using member initialisation list
 }
 
-Dictionary& Dictionary::operator=(const Dictionary& other) {
+Dictionary &Dictionary::operator=(const Dictionary &other) {
   mappingDict = other.mappingDict;
 
   return *this;
@@ -35,11 +36,11 @@ bool Dictionary::addWord(const std::string word) {
 
 std::string Dictionary::findWord(const std::string letters) {
   std::string lettersCleaned =
-    WordUtils::alphabetise(WordUtils::lowercase(letters));
+      WordUtils::alphabetise(WordUtils::lowercase(letters));
 
   try {
     return mappingDict.at(lettersCleaned);
-  } catch (std::out_of_range& except) {
+  } catch (std::out_of_range &except) {
     return "";
   }
 }
