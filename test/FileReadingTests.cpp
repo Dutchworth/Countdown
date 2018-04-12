@@ -1,7 +1,7 @@
-#include "FileReading.h"
 #include <fstream>
 #include <string>
 #include "Dictionary.h"
+#include "FileReading.h"
 #include "gtest/gtest.h"
 
 class FileReadingTests : public ::testing::Test {
@@ -27,6 +27,5 @@ TEST_F(FileReadingTests, testReadWithWordsTxt) {
 
   EXPECT_EQ("aardvark", dict.findWord("varkaard"));
   EXPECT_EQ("queen", dict.findWord("ueeqn"));
-  EXPECT_EQ("knave", dict.findWord("avnke"));
   EXPECT_EQ("ace", dict.findWord("cea"));
 }
