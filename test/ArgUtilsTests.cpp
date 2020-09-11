@@ -1,6 +1,7 @@
-#include "ArgUtils.h"
 #include <string>
 #include <vector>
+
+#include "ArgUtils.h"
 #include "gtest/gtest.h"
 
 class ArgUtilsTests : public ::testing::Test {

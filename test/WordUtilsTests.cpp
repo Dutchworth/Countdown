@@ -1,5 +1,6 @@
-#include "WordUtils.h"
 #include <string>
+
+#include "WordUtils.h"
 #include "gtest/gtest.h"
 
 TEST(WordUtilsTests, testAlphabetise) {

@@ -1,6 +1,8 @@
 #include "FileReading.h"
+
 #include <fstream>
 #include <string>
+
 #include "Dictionary.h"
 
 Dictionary FileReading::read(std::string path) {

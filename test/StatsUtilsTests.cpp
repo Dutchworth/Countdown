@@ -1,7 +1,8 @@
-#include "StatsUtils.h"
 #include <iostream>
 #include <string>
 #include <vector>
+
+#include "StatsUtils.h"
 #include "gtest/gtest.h"
 
 TEST(StatsUtilsTests, testGetCombinations) {

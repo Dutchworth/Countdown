@@ -1,7 +1,9 @@
 #include "Dictionary.h"
+
 #include <exception>
 #include <map>
 #include <string>
+
 #include "WordUtils.h"
 
 Dictionary::Dictionary() {

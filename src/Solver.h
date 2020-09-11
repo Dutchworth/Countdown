@@ -2,6 +2,7 @@
 #define SOLVER_H
 
 #include <string>
+
 #include "Dictionary.h"
 
 namespace Solver {
@@ -9,6 +10,6 @@ namespace Solver {
 // word that fits those letters.
 // The found word is output by reference.
 bool findWord(Dictionary& map, std::string letters, std::string& foundWord);
-}
+}  // namespace Solver
 
 #endif  // ifndef SOLVER_H

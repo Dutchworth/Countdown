@@ -1,6 +1,8 @@
 #include "Solver.h"
+
 #include <iostream>
 #include <string>
+
 #include "Dictionary.h"
 #include "StatsUtils.h"
 

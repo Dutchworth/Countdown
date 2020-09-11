@@ -1,6 +1,6 @@
-#include "Solver.h"
 #include "Dictionary.h"
 #include "FileReading.h"
+#include "Solver.h"
 #include "gtest/gtest.h"
 
 class SolverTests : public ::testing::Test {

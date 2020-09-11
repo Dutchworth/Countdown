@@ -1,5 +1,6 @@
 #include <fstream>
 #include <string>
+
 #include "Dictionary.h"
 #include "FileReading.h"
 #include "gtest/gtest.h"

@@ -1,4 +1,5 @@
 #include "WordUtils.h"
+
 #include <algorithm>
 #include <cctype>
 #include <string>

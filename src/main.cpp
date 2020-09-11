@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 #include "ArgUtils.h"
 #include "Dictionary.h"
 #include "FileReading.h"

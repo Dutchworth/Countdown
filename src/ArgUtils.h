@@ -18,5 +18,5 @@ bool lettersGiven(int argc, char** argv);
 std::string getLetters(int argc, char** argv);
 
 void printHelp(std::ostream& out);
-}
+}  // namespace ArgUtils
 #endif  // ifndef ARGUTILS_H
